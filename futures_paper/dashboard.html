@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101923">
+  <title>Futures Paper Control</title>
+  <link rel="stylesheet" href="/dashboard.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <p class="eyebrow">SIMULATION ONLY</p>
+        <h1>Futures paper control</h1>
+      </div>
+      <button id="logout" class="quiet hidden" type="button">Log out</button>
+    </header>
+
+    <section id="login-panel" class="panel">
+      <h2>Sign in</h2>
+      <p>Enter the access password shown when the dashboard was started on your PC.</p>
+      <form id="login-form">
+        <label for="token">Access password</label>
+        <input id="token" name="token" type="password" autocomplete="current-password" required>
+        <button class="primary" type="submit">Open dashboard</button>
+      </form>
+      <p id="login-error" class="error" role="alert"></p>
+    </section>
+
+    <section id="dashboard-panel" class="hidden">
+      <div class="status-row">
+        <div>
+          <p class="eyebrow">NEW ENTRIES</p>
+          <div id="entry-status" class="status">Loading</div>
+        </div>
+        <div>
+          <p class="eyebrow">SIMULATOR</p>
+          <div id="runner-status" class="status">Loading</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="start" class="primary" type="button">Start paper trading</button>
+        <button id="stop" class="danger" type="button">Pause new entries</button>
+      </div>
+      <p class="note">Pausing stops new simulated trades. Any open paper positions continue to be monitored and managed automatically.</p>
+
+      <div class="cards">
+        <article class="panel metric">
+          <span>Free paper cash</span>
+          <strong id="cash">—</strong>
+        </article>
+        <article class="panel metric">
+          <span>Open simulated positions</span>
+          <strong id="position-count">—</strong>
+        </article>
+      </div>
+
+      <section class="panel">
+        <h2>Open positions</h2>
+        <div id="positions" class="positions">Loading…</div>
+      </section>
+      <p id="updated" class="muted"></p>
+      <p id="action-error" class="error" role="alert"></p>
+    </section>
+
+    <footer>Local-network dashboard · No real orders or exchange keys</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+bot.log
+paper_state.json
+paper_state.json.tmp
+config.json
+futures_paper/bot.log
+futures_paper/paper_futures_state.json
+futures_paper/paper_futures_trades.jsonl
+futures_paper/futures_control.json
+futures_paper/futures_control.tmp
+futures_paper/.futures_paper_bot.lock
